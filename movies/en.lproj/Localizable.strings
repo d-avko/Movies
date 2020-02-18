@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  movies
+
+  Created by Denis Maximenko on 2/18/20.
+  Copyright © 2020 Denis Maximenko. All rights reserved.
+*/
+
+"Error": "Памылка"
+"Video_not_available": "Відэа недаступна"

@@ -1,0 +1,84 @@
+
+/* Class = "UITextField"; placeholder = "New font size"; ObjectID = "2Jd-VS-0Cp"; */
+"2Jd-VS-0Cp.placeholder" = "New font size";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "6KH-Es-hep"; */
+"6KH-Es-hep.placeholder" = "Name";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7IU-l9-MRm"; */
+"7IU-l9-MRm.text" = "Label";
+
+/* Class = "UILabel"; text = "AuthorData"; ObjectID = "8Ce-ls-cGK"; */
+"8Ce-ls-cGK.text" = "AuthorData";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "8FU-ex-3gb"; */
+"8FU-ex-3gb.text" = "Name";
+
+/* Class = "UIButton"; normalTitle = "Change font"; ObjectID = "8N7-QU-dq0"; */
+"8N7-QU-dq0.normalTitle" = "Change font";
+
+/* Class = "UILabel"; text = "Maximum duration"; ObjectID = "8Xq-4C-fJr"; */
+"8Xq-4C-fJr.text" = "Maximum duration";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "B8R-RQ-SGe"; */
+"B8R-RQ-SGe.text" = "Name";
+
+/* Class = "UILabel"; text = "Rating:"; ObjectID = "EJ7-oS-vxw"; */
+"EJ7-oS-vxw.text" = "Rating:";
+
+/* Class = "UITextField"; placeholder = "Hours"; ObjectID = "GR1-5U-gXO"; */
+"GR1-5U-gXO.placeholder" = "Hours";
+
+/* Class = "UILabel"; text = "Duration"; ObjectID = "Gna-7x-kFU"; */
+"Gna-7x-kFU.text" = "Duration";
+
+/* Class = "UILabel"; text = "Rating"; ObjectID = "Li8-t8-l1f"; */
+"Li8-t8-l1f.text" = "Rating";
+
+/* Class = "UILabel"; text = "Current Font:"; ObjectID = "UIz-gn-Rfy"; */
+"UIz-gn-Rfy.text" = "Current Font:";
+
+/* Class = "UILabel"; text = "Duration"; ObjectID = "Wem-C8-sB9"; */
+"Wem-C8-sB9.text" = "Duration";
+
+/* Class = "UILabel"; text = "Current Font Size: "; ObjectID = "cjs-vi-4wg"; */
+"cjs-vi-4wg.text" = "Current Font Size: ";
+
+/* Class = "UILabel"; text = " "; ObjectID = "dlX-GO-0Kw"; */
+"dlX-GO-0Kw.text" = " ";
+
+/* Class = "UILabel"; text = "Author:"; ObjectID = "g5x-uf-WcB"; */
+"g5x-uf-WcB.text" = "Author:";
+
+/* Class = "UITextField"; placeholder = "Minutes"; ObjectID = "iJH-BD-c6m"; */
+"iJH-BD-c6m.placeholder" = "Minutes";
+
+/* Class = "UIButton"; normalTitle = "Change font size"; ObjectID = "iQo-4b-aJA"; */
+"iQo-4b-aJA.normalTitle" = "Change font size";
+
+/* Class = "UIButton"; normalTitle = "Filter"; ObjectID = "ixR-42-nuW"; */
+"ixR-42-nuW.normalTitle" = "Filter";
+
+/* Class = "UILabel"; text = "Author"; ObjectID = "k6b-q3-dwR"; */
+"k6b-q3-dwR.text" = "Author";
+
+/* Class = "UILabel"; text = "  "; ObjectID = "kIB-eJ-uhL"; */
+"kIB-eJ-uhL.text" = "  ";
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "n4R-BT-1DV"; */
+"n4R-BT-1DV.normalTitle" = "Settings";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "o5o-Ow-IDH"; */
+"o5o-Ow-IDH.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oty-KB-Zxr"; */
+"oty-KB-Zxr.text" = "Label";
+
+/* Class = "UILabel"; text = "RatingData"; ObjectID = "sNq-34-cYS"; */
+"sNq-34-cYS.text" = "RatingData";
+
+/* Class = "UIButton"; normalTitle = "Apply filter"; ObjectID = "uEw-ps-0eV"; */
+"uEw-ps-0eV.normalTitle" = "Apply filter";
+
+/* Class = "UILabel"; text = "Author"; ObjectID = "w50-HF-Be2"; */
+"w50-HF-Be2.text" = "Author";
