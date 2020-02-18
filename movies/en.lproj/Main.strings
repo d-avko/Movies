@@ -1,0 +1,45 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7IU-l9-MRm"; */
+"7IU-l9-MRm.text" = "Label";
+
+/* Class = "UILabel"; text = "AuthorData"; ObjectID = "8Ce-ls-cGK"; */
+"8Ce-ls-cGK.text" = "AuthorData";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "8FU-ex-3gb"; */
+"8FU-ex-3gb.text" = "Name";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "B8R-RQ-SGe"; */
+"B8R-RQ-SGe.text" = "Name";
+
+/* Class = "UILabel"; text = "Rating:"; ObjectID = "EJ7-oS-vxw"; */
+"EJ7-oS-vxw.text" = "Rating:";
+
+/* Class = "UILabel"; text = "Duration"; ObjectID = "Gna-7x-kFU"; */
+"Gna-7x-kFU.text" = "Duration";
+
+/* Class = "UILabel"; text = "Rating"; ObjectID = "Li8-t8-l1f"; */
+"Li8-t8-l1f.text" = "Rating";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "M2n-9x-i5l"; */
+"M2n-9x-i5l.title" = "Settings";
+
+/* Class = "UILabel"; text = "Duration"; ObjectID = "Wem-C8-sB9"; */
+"Wem-C8-sB9.text" = "Duration";
+
+/* Class = "UILabel"; text = "Author:"; ObjectID = "g5x-uf-WcB"; */
+"g5x-uf-WcB.text" = "Author:";
+
+/* Class = "UILabel"; text = "Author"; ObjectID = "k6b-q3-dwR"; */
+"k6b-q3-dwR.text" = "Author";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "o5o-Ow-IDH"; */
+"o5o-Ow-IDH.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oty-KB-Zxr"; */
+"oty-KB-Zxr.text" = "Label";
+
+/* Class = "UILabel"; text = "RatingData"; ObjectID = "sNq-34-cYS"; */
+"sNq-34-cYS.text" = "RatingData";
+
+/* Class = "UITabBarItem"; title = "Filter"; ObjectID = "zib-wh-3Dg"; */
+"zib-wh-3Dg.title" = "Filter";
