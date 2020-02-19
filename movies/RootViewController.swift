@@ -9,22 +9,25 @@
 import UIKit
 
 class RootViewController: UIViewController {
+    
+    var embeddedVC: CartoonsViewController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        embeddedVC = self.children.first(where: { $0 is CartoonsViewController}) as? CartoonsViewController
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.destination is FilterMoviesViewController{
+            let destination = segue.destination as! FilterMoviesViewController
+            
+            destination.callBack = onFilterApplied(minutes:hours:author:)
+        }
     }
-    */
-
+    
+    func onFilterApplied(minutes: String, hours: String, author: String) {
+        embeddedVC?.onFilterApplied(hours: hours, minutes: minutes, author: author)
+    }
+       
 }

@@ -6,5 +6,5 @@
   Copyright © 2020 Denis Maximenko. All rights reserved.
 */
 
-"Error": "Памылка"
-"Video_not_available": "Відэа недаступна"
+"Error" = "Error";
+"Video_not_available" = "Video is not available";

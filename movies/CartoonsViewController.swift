@@ -12,7 +12,7 @@ class CartoonsViewController: UITableViewController {
     
     let serializer = JsonSerializer<Cartoon>()
     var cartoons = Array<Cartoon>()
-    
+    var filteredCartoons = Array<Cartoon>()
     override func viewDidLoad() {
         formatter.allowedUnits = [.hour, .minute]
         formatter.unitsStyle = .full
@@ -23,38 +23,39 @@ class CartoonsViewController: UITableViewController {
         }
         catch{
             var cartoons = [Cartoon]()
-            cartoons.append(Cartoon(name: "How To Train Your Dragon: The Hidden World", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
+            cartoons.append(Cartoon(name: "How To Train Your Dragon: The Hidden World", author: "Not Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "Alita: Battle Angel", author: "Disney", durationSeconds: 7200, rating: 3.1, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
+            cartoons.append(Cartoon(name: "Alita: Battle Angel", author: "Disney", durationSeconds: 7200, rating: 3.1, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "Lego Movie 2: The Second Part", author: "Disney", durationSeconds: 7200, rating: 5.0, genre: "Science", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
+            cartoons.append(Cartoon(name: "Lego Movie 2: The Second Part", author: "Disney", durationSeconds: 7200, rating: 5.0, genre: "Science", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "Wonder Park", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
+            cartoons.append(Cartoon(name: "Wonder Park", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "Pokémon Detective Pikachu", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
+            cartoons.append(Cartoon(name: "Pokémon Detective Pikachu", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "Shaun The Sheep Movie 2: Farmageddon", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
+            cartoons.append(Cartoon(name: "Shaun The Sheep Movie 2: Farmageddon", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "The Secret Life Of Pets 2", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
+            cartoons.append(Cartoon(name: "The Secret Life Of Pets 2", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "Toy Story 4", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
+            cartoons.append(Cartoon(name: "Toy Story 4", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "How To Train Your Dragon: The Hidden World", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
+            cartoons.append(Cartoon(name: "How To Train Your Dragon: The Hidden World", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "How To Train Your Dragon: The Hidden World", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
+            cartoons.append(Cartoon(name: "How To Train Your Dragon: The Hidden World", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "Wonder park", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
+            cartoons.append(Cartoon(name: "Wonder park", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "Playmobil: The Movie", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
+            cartoons.append(Cartoon(name: "Playmobil: The Movie", author: "Disney", durationSeconds: 7200, rating: 3.8, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "Angry Birds 2", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8"))
+            cartoons.append(Cartoon(name: "Angry Birds 2", author: "Disney", durationSeconds: 3780, rating: 5.0, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "Spies in Disguise", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: ""))
+            cartoons.append(Cartoon(name: "Spies in Disguise", author: "Disney", durationSeconds: 6000, rating: 4.2, genre: "Adventure", link: "", thumbnailLink:  "https://cdn3.vectorstock.com/i/thumb-large/92/12/sample-stamp-vector-16699212.jpg"))
             
-            cartoons.append(Cartoon(name: "The Addams Family", author: "Disney", durationSeconds: 7200, rating: 4.2, genre: "Adventure", link: ""))
+            cartoons.append(Cartoon(name: "The Addams Family", author: "Disney", durationSeconds: 7000, rating: 4.2, genre: "Adventure", link: "", thumbnailLink:  ""))
             
             serializer.saveFile(array: cartoons);
             self.cartoons = cartoons
+            self.forceFilter()
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -70,7 +71,7 @@ class CartoonsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.cartoons.count
+        return self.filteredCartoons.count
     }
 
     let formatter = DateComponentsFormatter()
@@ -80,19 +81,33 @@ class CartoonsViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CartoonViewCell", for: indexPath) as? CartoonViewCell else{
             fatalError("Incorrect type for viewcell was provided.")
         }
-        
-        let cartoon = self.cartoons[indexPath.row];
+               
+        let cartoon = self.filteredCartoons[indexPath.row];
         
         cell.authorLabel.text = cartoon.author
         
         let hours: Int = cartoon.durationSeconds / 60 / 60;
-        let minutes = (hours * 60 * 60 - cartoon.durationSeconds) / 60
+        let minutes = (cartoon.durationSeconds - hours * 60 * 60) / 60
         
         cell.durationLabel.text = "\(hours) h \(minutes) m"
 
         cell.nameLabel.text = cartoon.name
         cell.ratingLabel.text = String(format: "%.2f", cartoon.rating)
-        // Configure the cell...
+        
+        if let url = URL( string:cartoon.thumbnailLink)
+        {
+            DispatchQueue.global().async {
+              if let data = try? Data( contentsOf:url)
+              {
+                DispatchQueue.main.async {
+                    guard cell.imageView != nil else {
+                      return
+                    }
+                    cell.imageView!.image = UIImage( data:data)
+                }
+              }
+           }
+        }
 
         return cell
     }
@@ -100,11 +115,48 @@ class CartoonsViewController: UITableViewController {
     var selectedCartoon: Cartoon!
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cartoon = self.cartoons[indexPath.row];
+        let cartoon = self.filteredCartoons[indexPath.row];
         
         selectedCartoon = cartoon
         
         performSegue(withIdentifier: "tableview-cartoonview", sender: self)
+    }
+    
+    public var secondsFilter: Int = 0
+    public var authorFilter: String = ""
+    
+    public func onFilterApplied(hours: String, minutes: String, author: String) {
+        var hoursNumeric = 0
+        var minutesNumeric = 0
+        
+        if hours != ""{
+            hoursNumeric = Int(hours) ?? 0
+        }
+        
+        if minutes != ""{
+            minutesNumeric = Int(minutes) ?? 0
+        }
+        
+        secondsFilter = hoursNumeric * 60 * 60 + minutesNumeric * 60
+        
+        authorFilter = author
+        
+        self.forceFilter()
+    }
+    
+    func forceFilter(){
+        self.filteredCartoons = Array(cartoons)
+        
+        if secondsFilter != 0{
+            self.filteredCartoons = self.filteredCartoons.filter({ $0.durationSeconds <= secondsFilter  })
+        }
+        
+        if authorFilter != ""{
+            self.filteredCartoons = self.filteredCartoons.filter({ $0.author == authorFilter  })
+        }
+        
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
     
     

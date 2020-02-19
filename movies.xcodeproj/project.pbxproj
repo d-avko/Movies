@@ -12,6 +12,10 @@
 		910A2FBD23FAEBCC00D2A72C /* CartoonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2FBC23FAEBCC00D2A72C /* CartoonsViewController.swift */; };
 		910A2FBF23FAED2700D2A72C /* JsonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2FBE23FAED2700D2A72C /* JsonSerializer.swift */; };
 		910A2FC323FB0B1A00D2A72C /* CartoonInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2FC223FB0B1A00D2A72C /* CartoonInfoViewController.swift */; };
+		913AF48023FC4C3A008227AB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AF47F23FC4C3A008227AB /* RootViewController.swift */; };
+		913AF48223FC4E69008227AB /* FilterMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AF48123FC4E69008227AB /* FilterMoviesViewController.swift */; };
+		913AF48423FC5E5B008227AB /* ApplicationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AF48323FC5E5B008227AB /* ApplicationSettingsViewController.swift */; };
+		913AF48B23FC70BD008227AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 913AF48D23FC70BD008227AB /* Localizable.strings */; };
 		91AE791723F53FAE008508DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AE791623F53FAE008508DA /* AppDelegate.swift */; };
 		91AE791923F53FAE008508DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AE791823F53FAE008508DA /* SceneDelegate.swift */; };
 		91AE791B23F53FAE008508DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AE791A23F53FAE008508DA /* ViewController.swift */; };
@@ -45,6 +49,13 @@
 		910A2FBC23FAEBCC00D2A72C /* CartoonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsViewController.swift; sourceTree = "<group>"; };
 		910A2FBE23FAED2700D2A72C /* JsonSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonSerializer.swift; sourceTree = "<group>"; };
 		910A2FC223FB0B1A00D2A72C /* CartoonInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonInfoViewController.swift; sourceTree = "<group>"; };
+		913AF47F23FC4C3A008227AB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		913AF48123FC4E69008227AB /* FilterMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMoviesViewController.swift; sourceTree = "<group>"; };
+		913AF48323FC5E5B008227AB /* ApplicationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSettingsViewController.swift; sourceTree = "<group>"; };
+		913AF48523FC6A75008227AB /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Main.strings; sourceTree = "<group>"; };
+		913AF48623FC6A75008227AB /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		913AF48C23FC70BD008227AB /* be */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = be; path = be.lproj/Localizable.strings; sourceTree = "<group>"; };
+		913AF48E23FC7126008227AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		91AE791323F53FAE008508DA /* movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AE791623F53FAE008508DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91AE791823F53FAE008508DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +132,10 @@
 				910A2FBC23FAEBCC00D2A72C /* CartoonsViewController.swift */,
 				910A2FBE23FAED2700D2A72C /* JsonSerializer.swift */,
 				910A2FC223FB0B1A00D2A72C /* CartoonInfoViewController.swift */,
+				913AF47F23FC4C3A008227AB /* RootViewController.swift */,
+				913AF48123FC4E69008227AB /* FilterMoviesViewController.swift */,
+				913AF48323FC5E5B008227AB /* ApplicationSettingsViewController.swift */,
+				913AF48D23FC70BD008227AB /* Localizable.strings */,
 			);
 			path = movies;
 			sourceTree = "<group>";
@@ -229,6 +244,7 @@
 			knownRegions = (
 				en,
 				Base,
+				be,
 			);
 			mainGroup = 91AE790A23F53FAE008508DA;
 			productRefGroup = 91AE791423F53FAE008508DA /* Products */;
@@ -248,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91AE792323F53FAF008508DA /* LaunchScreen.storyboard in Resources */,
+				913AF48B23FC70BD008227AB /* Localizable.strings in Resources */,
 				91AE792023F53FAF008508DA /* Assets.xcassets in Resources */,
 				91AE791E23F53FAE008508DA /* Main.storyboard in Resources */,
 			);
@@ -276,11 +293,14 @@
 			files = (
 				910A2FBB23FAE89E00D2A72C /* CartoonViewCell.swift in Sources */,
 				910A2FBD23FAEBCC00D2A72C /* CartoonsViewController.swift in Sources */,
+				913AF48023FC4C3A008227AB /* RootViewController.swift in Sources */,
 				910A2FBF23FAED2700D2A72C /* JsonSerializer.swift in Sources */,
 				910A2FC323FB0B1A00D2A72C /* CartoonInfoViewController.swift in Sources */,
 				91AE791B23F53FAE008508DA /* ViewController.swift in Sources */,
+				913AF48223FC4E69008227AB /* FilterMoviesViewController.swift in Sources */,
 				91AE791723F53FAE008508DA /* AppDelegate.swift in Sources */,
 				91030E9423F5925D00BE0BAD /* Cartoon.swift in Sources */,
+				913AF48423FC5E5B008227AB /* ApplicationSettingsViewController.swift in Sources */,
 				91AE791923F53FAE008508DA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,10 +337,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		913AF48D23FC70BD008227AB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				913AF48C23FC70BD008227AB /* be */,
+				913AF48E23FC7126008227AB /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		91AE791C23F53FAE008508DA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				91AE791D23F53FAE008508DA /* Base */,
+				913AF48523FC6A75008227AB /* be */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -329,6 +359,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				91AE792223F53FAF008508DA /* Base */,
+				913AF48623FC6A75008227AB /* be */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -340,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -400,6 +432,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

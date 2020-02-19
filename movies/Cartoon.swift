@@ -10,13 +10,14 @@ import Foundation
 
 class Cartoon : NSObject, Encodable, Decodable{
     
-    init(name: String, author: String, durationSeconds: Int, rating: Double, genre: String, link: String) {
+    init(name: String, author: String, durationSeconds: Int, rating: Double, genre: String, link: String, thumbnailLink: String) {
         self.name = name;
         self.durationSeconds = durationSeconds;
         self.rating = rating;
         self.genre = genre;
         self.author = author;
         self.link = link;
+        self.thumbnailLink = thumbnailLink
     }
     
     public var name : String;
@@ -25,4 +26,5 @@ class Cartoon : NSObject, Encodable, Decodable{
     public var rating: Double;
     public var genre: String;
     public var link: String;
+    public var thumbnailLink: String;
 }
