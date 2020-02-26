@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cartoons</string>
+    <string name="app_settings">Settings</string>
+    <string name="cartoons_filter">Filter</string>
+    <string name="filter_author">Studio</string>
+    <string name="filter_duration">Maximum Duration</string>
+    <string name="filter_minutes">Minutes</string>
+    <string name="filter_hours">Hours</string>
+</resources>
