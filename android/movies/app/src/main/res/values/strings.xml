@@ -6,4 +6,9 @@
     <string name="filter_duration">Maximum Duration</string>
     <string name="filter_minutes">Minutes</string>
     <string name="filter_hours">Hours</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_en">English</string>
+    <string name="settings_by">Belarusian</string>
+    <string name="cartoonsview_rating">Rating</string>
+    <string name="cartoonsview_duration">Duration</string>
 </resources>

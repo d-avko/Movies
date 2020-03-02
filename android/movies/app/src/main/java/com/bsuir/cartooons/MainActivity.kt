@@ -1,7 +1,5 @@
 package com.bsuir.cartooons
 
-import android.content.Intent
-import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -10,10 +8,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bsuir.cartooons.models.Cartoon
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import java.util.Locale;
+import android.os.Bundle;
+import android.app.Activity;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
 
 
 
@@ -68,9 +69,24 @@ class MainActivity : AppCompatActivity(), IFilterable, View.OnClickListener {
     private lateinit var cartoonRecyclerAdapter: CartoonRecyclerAdapter
     private var jsonSerializer: JsonFileSerializer = JsonFileSerializer()
 
+    override fun onResume() {
+        if(previousLocale != LocaleSingleton.instance.SelectedLocale){
+            finish()
+            startActivity(intent)
+        }
+
+        super.onResume()
+    }
+
+    var previousLocale: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         instance = this
+        previousLocale = LocaleSingleton.instance.SelectedLocale
+        resources.configuration.setLocale(Locale(previousLocale))
+        resources.updateConfiguration(resources.configuration, resources.displayMetrics)
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         initRecyclerView()
         addDataSet(jsonSerializer)
@@ -100,7 +116,10 @@ class MainActivity : AppCompatActivity(), IFilterable, View.OnClickListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.settings -> {
+                val intent = Intent(this, settings_activity::class.java).apply {
 
+                }
+                startActivity(intent)
             }
             R.id.filter -> {
                 val intent = Intent(this, filter_activity::class.java).apply {

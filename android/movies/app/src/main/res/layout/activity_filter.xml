@@ -21,8 +21,8 @@
 
     <TextView
         android:id="@+id/duration_label"
-        android:layout_width="213dp"
-        android:layout_height="35dp"
+        android:layout_width="224dp"
+        android:layout_height="59dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="42dp"
         android:layout_marginBottom="504dp"
@@ -38,14 +38,14 @@
         android:id="@+id/filter_hours"
         android:layout_width="127dp"
         android:layout_height="46dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginStart="56dp"
         android:ems="10"
         android:hint="@string/filter_hours"
         android:inputType="numberSigned"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.332" />
+        app:layout_constraintVertical_bias="0.367" />
 
     <EditText
         android:id="@+id/filter_minutes"
@@ -58,7 +58,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.33" />
+        app:layout_constraintVertical_bias="0.365" />
 
     <Button
         android:id="@+id/button"

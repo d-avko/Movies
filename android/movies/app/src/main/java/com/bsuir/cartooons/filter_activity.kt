@@ -4,10 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import java.util.*
 
 class filter_activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        resources.configuration.setLocale(Locale(LocaleSingleton.instance.SelectedLocale))
+
+        resources.updateConfiguration(resources.configuration, resources.displayMetrics)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_filter)
     }

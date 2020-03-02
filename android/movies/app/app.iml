@@ -25,7 +25,7 @@
       </configuration>
     </facet>
     <facet type="kotlin-language" name="Kotlin">
-      <configuration version="3" platform="JVM 1.6" allPlatforms="JVM [1.6]" useProjectSettings="false" pureKotlinSourceFolders="C:\Users\Denni\Desktop\Study\mobiles\cartoons\app\src\debug\kotlin;C:\Users\Denni\Desktop\Study\mobiles\cartoons\app\src\debug\java;C:\Users\Denni\Desktop\Study\mobiles\cartoons\app\src\release\kotlin;C:\Users\Denni\Desktop\Study\mobiles\cartoons\app\src\release\java;C:\Users\Denni\Desktop\Study\mobiles\cartoons\app\src\debugAndroidTest\kotlin;C:\Users\Denni\Desktop\Study\mobiles\cartoons\app\src\debugUnitTest\kotlin;C:\Users\Denni\Desktop\Study\mobiles\cartoons\app\src\releaseUnitTest\kotlin">
+      <configuration version="3" platform="JVM 1.6" allPlatforms="JVM [1.6]" useProjectSettings="false" pureKotlinSourceFolders="C:\Users\Denni\Desktop\git-repos\Movies\android\movies\app\src\debug\kotlin;C:\Users\Denni\Desktop\git-repos\Movies\android\movies\app\src\debug\java;C:\Users\Denni\Desktop\git-repos\Movies\android\movies\app\src\release\kotlin;C:\Users\Denni\Desktop\git-repos\Movies\android\movies\app\src\release\java;C:\Users\Denni\Desktop\git-repos\Movies\android\movies\app\src\debugAndroidTest\kotlin;C:\Users\Denni\Desktop\git-repos\Movies\android\movies\app\src\debugUnitTest\kotlin;C:\Users\Denni\Desktop\git-repos\Movies\android\movies\app\src\releaseUnitTest\kotlin">
         <compilerSettings>
           <option name="additionalArguments" value="-Xallow-no-source-files" />
         </compilerSettings>

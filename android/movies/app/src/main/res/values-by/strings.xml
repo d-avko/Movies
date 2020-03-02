@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Мультфільмы</string>
+    <string name="app_settings">Налады</string>
+    <string name="cartoons_filter">Фільтр</string>
+    <string name="filter_author">Студыя</string>
+    <string name="filter_duration">Максімальная працягласць</string>
+    <string name="filter_minutes">Хвілін</string>
+    <string name="filter_hours">Гадзін</string>
+    <string name="settings_language">Мова</string>
+    <string name="settings_en">Англійская</string>
+    <string name="settings_by">Беларуская</string>
+    <string name="cartoonsview_rating">Рэйтынг</string>
+    <string name="cartoonsview_duration">Працягласць</string>
+</resources>

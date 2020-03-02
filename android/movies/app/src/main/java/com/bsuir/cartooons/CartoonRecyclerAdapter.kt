@@ -4,6 +4,7 @@ package com.bsuir.cartooons
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.layout_cartoon_item.view.*
 import com.bumptech.glide.Glide
@@ -87,9 +88,11 @@ class CartoonRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
             var hours = cartoon.durationSeconds / 60 / 60;
             var minutes = (cartoon.durationSeconds - hours * 60 * 60) / 60
 
-            duration_view.setText("$hours " + "hours" + " " + "$minutes " + "minutes");
+            duration_view.setText("$hours " + itemView.context.resources.getString(R.string.filter_hours) + " " + "$minutes " +
+                    itemView.context.resources.getString(R.string.filter_minutes));
 
-            rating_view.setText("Rating" + ":" + String.format("%.2f", cartoon.rating))
+
+            rating_view.setText(itemView.context.resources.getString(R.string.cartoonsview_rating) + ":" + String.format("%.2f", cartoon.rating))
         }
 
     }
