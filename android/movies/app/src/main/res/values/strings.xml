@@ -11,4 +11,10 @@
     <string name="settings_by">Belarusian</string>
     <string name="cartoonsview_rating">Rating</string>
     <string name="cartoonsview_duration">Duration</string>
+    <string name="video_not_available">Video is not available.</string>
+    <string name="video_error_caption">Error</string>
+    <string name="settings_font_size">Font size</string>
+    <string name="settings_fontsize_small">Small</string>
+    <string name="settings_fontsize_medium">Medium</string>
+    <string name="settings_fontsize_large">Large</string>
 </resources>

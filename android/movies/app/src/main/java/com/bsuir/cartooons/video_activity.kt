@@ -12,6 +12,7 @@ class video_activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video)
+        theme.applyStyle(Preferences(this).getFontStyle().getResId(), true);
 
         val videoView = findViewById<VideoView>(R.id.videoView);
 
@@ -33,10 +34,10 @@ class video_activity : AppCompatActivity() {
     fun showErrorDialog(){
         val builder = AlertDialog.Builder(this@video_activity)
 
-        builder.setTitle("Error")
+        builder.setTitle(resources.getString(R.string.video_error_caption))
 
         // Display a message on alert dialog
-        builder.setMessage("Video doesn't have the trailer.")
+        builder.setMessage(resources.getString(R.string.video_not_available))
 
         // Display a neutral button on alert dialog
         builder.setNeutralButton("OK"){_,_ ->

@@ -70,7 +70,8 @@ class MainActivity : AppCompatActivity(), IFilterable, View.OnClickListener {
     private var jsonSerializer: JsonFileSerializer = JsonFileSerializer()
 
     override fun onResume() {
-        if(previousLocale != LocaleSingleton.instance.SelectedLocale){
+        if(previousLocale != LocaleSingleton.instance.SelectedLocale || previousFont !=
+            Preferences(this).getFontStyle().getResId()){
             finish()
             startActivity(intent)
         }
@@ -79,12 +80,15 @@ class MainActivity : AppCompatActivity(), IFilterable, View.OnClickListener {
     }
 
     var previousLocale: String = ""
+    var previousFont: Int = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         instance = this
         previousLocale = LocaleSingleton.instance.SelectedLocale
+        previousFont = Preferences(this).getFontStyle().getResId()
         resources.configuration.setLocale(Locale(previousLocale))
         resources.updateConfiguration(resources.configuration, resources.displayMetrics)
+        theme.applyStyle(previousFont, true);
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)

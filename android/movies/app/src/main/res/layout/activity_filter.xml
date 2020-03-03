@@ -17,18 +17,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.097" />
+        app:layout_constraintVertical_bias="0.093" />
 
     <TextView
         android:id="@+id/duration_label"
-        android:layout_width="224dp"
-        android:layout_height="59dp"
+        android:layout_width="232dp"
+        android:layout_height="75dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="42dp"
         android:layout_marginBottom="504dp"
         android:gravity="center"
         android:text="@string/filter_duration"
-        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/studio_text"
@@ -36,29 +35,29 @@
 
     <EditText
         android:id="@+id/filter_hours"
-        android:layout_width="127dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="56dp"
+        android:layout_width="144dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="44dp"
         android:ems="10"
         android:hint="@string/filter_hours"
         android:inputType="numberSigned"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.367" />
+        app:layout_constraintVertical_bias="0.42" />
 
     <EditText
         android:id="@+id/filter_minutes"
-        android:layout_width="132dp"
-        android:layout_height="44dp"
-        android:layout_marginEnd="48dp"
+        android:layout_width="149dp"
+        android:layout_height="63dp"
+        android:layout_marginEnd="32dp"
         android:ems="10"
         android:hint="@string/filter_minutes"
         android:inputType="numberSigned"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.365" />
+        app:layout_constraintVertical_bias="0.42" />
 
     <Button
         android:id="@+id/button"

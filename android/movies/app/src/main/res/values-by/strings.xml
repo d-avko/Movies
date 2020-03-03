@@ -11,4 +11,10 @@
     <string name="settings_by">Беларуская</string>
     <string name="cartoonsview_rating">Рэйтынг</string>
     <string name="cartoonsview_duration">Працягласць</string>
+    <string name="video_not_available">Відэа не даступна.</string>
+    <string name="settings_font_size">Памер шрыфту</string>
+    <string name="settings_fontsize_small">Маленькі</string>
+    <string name="settings_fontsize_medium">Cярэдні</string>
+    <string name="settings_fontsize_large">Вялікі</string>
+    <string name="video_error_caption">Памылка</string>
 </resources>
