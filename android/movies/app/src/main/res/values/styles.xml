@@ -11,6 +11,9 @@
     <style name="FontStyle">
     </style>
 
+    <style name="FontFamily">
+    </style>
+
     <style name="FontStyle.Small">
         <item name="android:textSize">14sp</item>
         <item name="font_medium">16sp</item>
@@ -31,5 +34,18 @@
         <item name="font_large">30sp</item>
         <item name="font_xlarge">32sp</item>
     </style>
+
+    <style name="FontFamily.SansSerif">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="FontFamily.SansSerifLight">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="FontFamily.Monospace">
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
 
 </resources>

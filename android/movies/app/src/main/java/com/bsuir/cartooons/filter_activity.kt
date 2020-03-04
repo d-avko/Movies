@@ -15,6 +15,8 @@ class filter_activity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         theme.applyStyle(Preferences(this).getFontStyle().getResId(), true);
+        theme.applyStyle(Preferences(this).getFontFamily().getResId(), true);
+
         setContentView(R.layout.activity_filter)
     }
 

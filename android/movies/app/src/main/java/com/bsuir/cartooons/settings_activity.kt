@@ -7,12 +7,6 @@ import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 import kotlin.collections.ArrayList
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-
-
 
 
 class settings_activity : AppCompatActivity() {
@@ -22,6 +16,7 @@ class settings_activity : AppCompatActivity() {
 
         resources.updateConfiguration(resources.configuration, resources.displayMetrics)
         theme.applyStyle(Preferences(this).getFontStyle().getResId(), true);
+        theme.applyStyle(Preferences(this).getFontFamily().getResId(), true);
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings_activity)
 
@@ -32,6 +27,8 @@ class settings_activity : AppCompatActivity() {
         FONT_SIZES.add(resources.getString(R.string.settings_fontsize_medium))
         FONT_SIZES.add(resources.getString(R.string.settings_fontsize_large))
 
+        FONT_FAMILIES.addAll(FontFamily.values().map{value -> value.getTitle()})
+
         LanguagesMap.add("en")
         LanguagesMap.add("by")
 
@@ -40,19 +37,25 @@ class settings_activity : AppCompatActivity() {
             android.R.layout.simple_spinner_dropdown_item, LANGUAGES
         )
 
-        val textView = findViewById<Spinner>(R.id.languages_dropdown)
-        textView.adapter = adapter
-        textView.isSelected = false;
-        textView.setSelection(0,false)
+        val languagesSpinner = findViewById<Spinner>(R.id.languages_dropdown)
+        languagesSpinner.adapter = adapter
+        languagesSpinner.isSelected = false;
+        languagesSpinner.setSelection(0,false)
 
         val fontSizesSpinner = findViewById<Spinner>(R.id.font_sizes_spinner)
+        val fontFamiliesSpinner = findViewById<Spinner>(R.id.font_family_spinner)
 
         fontSizesSpinner.adapter = ArrayAdapter<String>(
             this,
             android.R.layout.simple_spinner_dropdown_item, FONT_SIZES
         )
 
-        textView.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+        fontFamiliesSpinner.adapter = ArrayAdapter<String>(
+            this,
+            android.R.layout.simple_spinner_dropdown_item, FONT_FAMILIES
+        )
+
+        languagesSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 if(LanguagesMap.indexOf(resources.configuration.locale.language) != position){
                     LocaleSingleton.instance.SelectedLocale = LanguagesMap[position]
@@ -79,9 +82,24 @@ class settings_activity : AppCompatActivity() {
 
             }
         };
+
+        fontFamiliesSpinner.setSelection(prefs.getFontFamily().ordinal);
+
+        fontFamiliesSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                prefs.setFontFamily(FontFamily.values()[id.toInt()])
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        };
+
+
     }
 
     private var LANGUAGES = ArrayList<String>()
     private var FONT_SIZES = ArrayList<String>()
+    private var FONT_FAMILIES = ArrayList<String>()
     private val LanguagesMap = ArrayList<String>()
 }

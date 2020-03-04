@@ -5,5 +5,10 @@
         <attr name="font_medium" format="dimension" />
         <attr name="font_large" format="dimension" />
         <attr name="font_xlarge" format="dimension" />
+
+        <attr name="font_sans_serif" format="dimension" />
+        <attr name="font_sans_serif_light" format="dimension" />
+        <attr name="font_serif" format="dimension" />
+        <attr name="font_monospace" format="dimension" />
     </declare-styleable>
 </resources>

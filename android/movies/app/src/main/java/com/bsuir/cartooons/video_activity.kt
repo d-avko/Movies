@@ -13,6 +13,7 @@ class video_activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video)
         theme.applyStyle(Preferences(this).getFontStyle().getResId(), true);
+        theme.applyStyle(Preferences(this).getFontFamily().getResId(), true);
 
         val videoView = findViewById<VideoView>(R.id.videoView);
 
