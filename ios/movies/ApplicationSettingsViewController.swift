@@ -62,6 +62,8 @@ class ApplicationSettingsViewController: UIViewController, UIFontPickerViewContr
             UILabel.appearance().font = UILabel.appearance().font.withSize(CGFloat(newFontSizeInt))
         }
         
+        self.updateFonts()
+        
     }
     
     func fontPickerViewControllerDidPickFont(_ viewController: UIFontPickerViewController) {

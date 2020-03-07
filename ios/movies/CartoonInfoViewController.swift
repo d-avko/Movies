@@ -20,7 +20,7 @@ class CartoonInfoViewController: UIViewController {
         let hours: Int = cartoon.durationSeconds / 60 / 60;
         let minutes = (cartoon.durationSeconds - hours * 60 * 60) / 60
         
-        durationLabel.text = "\(hours) h \(minutes) m"
+        durationLabel.text = "\(hours):\(minutes)"
         
         nameLabel.text = cartoon.name
         

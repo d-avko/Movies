@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910048932413D7A6002CBB00 /* AdaptiveUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910048922413D7A6002CBB00 /* AdaptiveUIImageView.swift */; };
 		91030E9423F5925D00BE0BAD /* Cartoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91030E9323F5925D00BE0BAD /* Cartoon.swift */; };
 		910A2FBB23FAE89E00D2A72C /* CartoonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2FBA23FAE89E00D2A72C /* CartoonViewCell.swift */; };
 		910A2FBD23FAEBCC00D2A72C /* CartoonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2FBC23FAEBCC00D2A72C /* CartoonsViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		910048922413D7A6002CBB00 /* AdaptiveUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveUIImageView.swift; sourceTree = "<group>"; };
 		91030E9323F5925D00BE0BAD /* Cartoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cartoon.swift; sourceTree = "<group>"; };
 		910A2FBA23FAE89E00D2A72C /* CartoonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonViewCell.swift; sourceTree = "<group>"; };
 		910A2FBC23FAEBCC00D2A72C /* CartoonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				913AF48123FC4E69008227AB /* FilterMoviesViewController.swift */,
 				913AF48323FC5E5B008227AB /* ApplicationSettingsViewController.swift */,
 				913AF48D23FC70BD008227AB /* Localizable.strings */,
+				910048922413D7A6002CBB00 /* AdaptiveUIImageView.swift */,
 			);
 			path = movies;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			files = (
 				910A2FBB23FAE89E00D2A72C /* CartoonViewCell.swift in Sources */,
 				910A2FBD23FAEBCC00D2A72C /* CartoonsViewController.swift in Sources */,
+				910048932413D7A6002CBB00 /* AdaptiveUIImageView.swift in Sources */,
 				913AF48023FC4C3A008227AB /* RootViewController.swift in Sources */,
 				910A2FBF23FAED2700D2A72C /* JsonSerializer.swift in Sources */,
 				910A2FC323FB0B1A00D2A72C /* CartoonInfoViewController.swift in Sources */,

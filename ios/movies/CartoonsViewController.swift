@@ -89,25 +89,23 @@ class CartoonsViewController: UITableViewController {
         let hours: Int = cartoon.durationSeconds / 60 / 60;
         let minutes = (cartoon.durationSeconds - hours * 60 * 60) / 60
         
-        cell.durationLabel.text = "\(hours) h \(minutes) m"
+        cell.durationLabel.text = "\(hours) : \(minutes)"
 
         cell.nameLabel.text = cartoon.name
         cell.ratingLabel.text = String(format: "%.2f", cartoon.rating)
         
         if let url = URL( string:cartoon.thumbnailLink)
         {
-            DispatchQueue.global().async {
-              if let data = try? Data( contentsOf:url)
-              {
-                DispatchQueue.main.async {
-                    guard cell.imageView != nil else {
-                      return
-                    }
-                    cell.imageView!.image = UIImage( data:data)
-                }
-              }
-           }
+             if let data = try? Data( contentsOf:url)
+             {
+               guard cell.imageView != nil else {
+                 return cell
+               }
+                cell.photoImageView?.contentMode = .scaleAspectFit
+                cell.photoImageView?.image = UIImage( data:data)
+            }
         }
+    
 
         return cell
     }
