@@ -7,48 +7,31 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
-class JsonSerializer<T> where T:Encodable, T: Decodable{
+class JsonSerializer{
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
-    let filePath = "/Cartoons/movies.json"
-    let fileFolder = "Cartoons"
+    public let ref = Database.database().reference()
     
-    public func saveFile(array: Array<T>){
-        if let encodedData = try? encoder.encode(array){
-            do{
-                let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-                let documentsDirectory = paths[0]
-                let docURL = URL(string: documentsDirectory)!
-                var dataPath = docURL.appendingPathComponent("Cartoons")
-                
-                if !FileManager.default.fileExists(atPath: dataPath.absoluteString) {
-                    do {
-                        try FileManager.default.createDirectory(atPath: dataPath.absoluteString, withIntermediateDirectories: true, attributes: nil)
-                        
-                        dataPath.appendPathComponent("movies.json")
-
-                        FileManager.default.createFile(atPath: dataPath.absoluteString, contents: encodedData, attributes: nil)
-                    } catch {
-                        print(error.localizedDescription);
-                    }
-                }else{
-                    dataPath = dataPath.appendingPathComponent("movies.json")
+    public func saveFile(array: Array<Cartoon>){
+        for data in array{
+            let dataToStore = ["id" : data.id,
+                "name" : data.name,
+                "author" : data.author,
+                "durationSeconds" : data.durationSeconds,
+                "genre": data.genre,
+                "link": data.link,
+                "thumbnailLink": data.thumbnailLink,
+                "rating": data.rating] as [String : Any]
+            
+            ref.child("movies").child(String(data.id)).setValue(dataToStore, withCompletionBlock: { err, ref in
+                if let error = err {
+                    print("userInfoDictionary was not saved: \(error.localizedDescription)")
+                } else {
+                    print("userInfoDictionary saved successfully!")
                 }
-                
-                try encodedData.write(to: URL(fileURLWithPath: dataPath.absoluteString))
-            }
-            catch{
-                print("Some data failed to save. \(error.localizedDescription)")
-            }
+            })
         }
-    }
-    
-    public func loadData() throws -> Array<T>{
-        let data = try Data(contentsOf: URL(fileURLWithPath: filePath))
-        
-        let decodedData = try decoder.decode(Array<T>.self, from: data)
-        
-        return decodedData
     }
 }
