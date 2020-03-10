@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class CartoonsViewController: UITableViewController {
     
@@ -22,18 +23,19 @@ class CartoonsViewController: UITableViewController {
         updateDataInStore()
         
         serializer.ref.child("movies").observe(.value) { snapshot in
-                 for child in snapshot.children {
-                   let value = child as? NSDictionary
-                   let id = value?["id"] as? String ?? ""
+            let castedChilren = snapshot.children.allObjects as? [DataSnapshot]
+            for child in castedChilren! {
+                let value = child.value as? Dictionary<String,Any>
+                   let id = value?["id"] as? Int ?? 0
                    let name = value?["name"] as? String ?? ""
                    let author = value?["author"] as? String ?? ""
-                   let duration = value?["durationSeconds"] as? String ?? ""
-                   let rating = value?["rating"] as? String ?? ""
+                   let duration = value?["durationSeconds"] as? Int ?? 0
+                   let rating = value?["rating"] as? Double ?? 0
                    let genre = value?["genre"] as? String ?? ""
                    let link = value?["link"] as? String ?? ""
                    let thumbnail = value?["thumbnailLink"] as? String ?? ""
                    
-                    self.cartoons.append(Cartoon(id: Int(id) ?? 0, name: name, author: author, durationSeconds: Int(duration) ?? 0, rating: Double(rating) ?? 0, genre: genre, link: link, thumbnailLink: thumbnail))
+                    self.cartoons.append(Cartoon(id: id, name: name, author: author, durationSeconds: duration, rating: rating, genre: genre, link: link, thumbnailLink: thumbnail))
                  }
                }
     }
@@ -42,7 +44,7 @@ class CartoonsViewController: UITableViewController {
         var cartoons = [Cartoon]()
         cartoons.append(Cartoon(id: 1,name: "How To Train Your Dragon: The Hidden World", author: "Not Disney", durationSeconds: 7200, rating: 4.6, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://i0.wp.com/www.thehollywoodoutsider.com/wp-content/uploads/how-to-train-your-dragon-3.1-e1549636317616.jpg?resize=660%2C330&ssl=1"))
         
-        cartoons.append(Cartoon(id: 2,name: "Alita: Battle Angel", author: "Disney", durationSeconds: 7200, rating: 3.1, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://thedigitalweekly.com/wp-content/uploads/2020/02/mv5bmzrlzgmxzmitmzk1zs00mdi4lwi2zgitmdhhmja0mje3zdazxkeyxkfqcgdeqxvynzi1nzmxnzm40._v1_sx1777_cr001777999_al_-696x391.jpg"))
+        cartoons.append(Cartoon(id: 2,name: "Alita: Battle Angel", author: "Disney", durationSeconds: 7200, rating: 3.1, genre: "Adventure", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://assets3.thrillist.com/v1/image/2860392/size/gn-gift_guide_variable_c.jpg"))
         
         cartoons.append(Cartoon(id: 3,name: "Lego Movie 2: The Second Part", author: "Disney", durationSeconds: 7200, rating: 5.0, genre: "Science", link: "https://devstreaming-cdn.apple.com/videos/streaming/examples/bipbop_adv_example_hevc/master.m3u8", thumbnailLink:  "https://m.media-amazon.com/images/M/MV5BZmE3ZmYwNTgtNTBmOC00NGU1LWJjNzktOTVhMjEzODFmOGFlXkEyXkFqcGdeQXdhZHppdGE@._V1_UX477_CR0,0,477,268_AL_.jpg"))
         
