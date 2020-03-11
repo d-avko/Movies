@@ -13,8 +13,10 @@
 		91030E9423F5925D00BE0BAD /* Cartoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91030E9323F5925D00BE0BAD /* Cartoon.swift */; };
 		910A2FBB23FAE89E00D2A72C /* CartoonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2FBA23FAE89E00D2A72C /* CartoonViewCell.swift */; };
 		910A2FBD23FAEBCC00D2A72C /* CartoonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2FBC23FAEBCC00D2A72C /* CartoonsViewController.swift */; };
-		910A2FBF23FAED2700D2A72C /* JsonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2FBE23FAED2700D2A72C /* JsonSerializer.swift */; };
+		910A2FBF23FAED2700D2A72C /* FirebaseDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2FBE23FAED2700D2A72C /* FirebaseDb.swift */; };
 		910A2FC323FB0B1A00D2A72C /* CartoonInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910A2FC223FB0B1A00D2A72C /* CartoonInfoViewController.swift */; };
+		910B53912419525000C450CC /* Cartoon_Network_2010_logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 910B53902419525000C450CC /* Cartoon_Network_2010_logo.svg */; };
+		910B53932419547600C450CC /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910B53922419547600C450CC /* Storage.swift */; };
 		913AF48023FC4C3A008227AB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AF47F23FC4C3A008227AB /* RootViewController.swift */; };
 		913AF48223FC4E69008227AB /* FilterMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AF48123FC4E69008227AB /* FilterMoviesViewController.swift */; };
 		913AF48423FC5E5B008227AB /* ApplicationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913AF48323FC5E5B008227AB /* ApplicationSettingsViewController.swift */; };
@@ -28,6 +30,7 @@
 		91AE792323F53FAF008508DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91AE792123F53FAF008508DA /* LaunchScreen.storyboard */; };
 		91AE792E23F53FB0008508DA /* moviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AE792D23F53FB0008508DA /* moviesTests.swift */; };
 		91AE793923F53FB0008508DA /* moviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AE793823F53FB0008508DA /* moviesUITests.swift */; };
+		91B692782419652100F029A1 /* NewCartoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B692772419652100F029A1 /* NewCartoonViewController.swift */; };
 		B05E6BF1F7529A0F395580FC /* Pods_movies_moviesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1EAC2E8AAB4614531EC6C44 /* Pods_movies_moviesUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,8 +61,10 @@
 		91030E9323F5925D00BE0BAD /* Cartoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cartoon.swift; sourceTree = "<group>"; };
 		910A2FBA23FAE89E00D2A72C /* CartoonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonViewCell.swift; sourceTree = "<group>"; };
 		910A2FBC23FAEBCC00D2A72C /* CartoonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsViewController.swift; sourceTree = "<group>"; };
-		910A2FBE23FAED2700D2A72C /* JsonSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonSerializer.swift; sourceTree = "<group>"; };
+		910A2FBE23FAED2700D2A72C /* FirebaseDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDb.swift; sourceTree = "<group>"; };
 		910A2FC223FB0B1A00D2A72C /* CartoonInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonInfoViewController.swift; sourceTree = "<group>"; };
+		910B53902419525000C450CC /* Cartoon_Network_2010_logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Cartoon_Network_2010_logo.svg; path = ../../../../Downloads/Cartoon_Network_2010_logo.svg; sourceTree = "<group>"; };
+		910B53922419547600C450CC /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		913AF47F23FC4C3A008227AB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		913AF48123FC4E69008227AB /* FilterMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterMoviesViewController.swift; sourceTree = "<group>"; };
 		913AF48323FC5E5B008227AB /* ApplicationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSettingsViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +88,7 @@
 		91AE793423F53FB0008508DA /* moviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = moviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AE793823F53FB0008508DA /* moviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moviesUITests.swift; sourceTree = "<group>"; };
 		91AE793A23F53FB0008508DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91B692772419652100F029A1 /* NewCartoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCartoonViewController.swift; sourceTree = "<group>"; };
 		92C8D4DB4E2944EA72D43E87 /* Pods-moviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moviesTests.debug.xcconfig"; path = "Target Support Files/Pods-moviesTests/Pods-moviesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A9877CF105B1522154372AD3 /* Pods_moviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EAC2E8AAB4614531EC6C44 /* Pods_movies_moviesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_movies_moviesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,12 +162,13 @@
 				91AE791A23F53FAE008508DA /* ViewController.swift */,
 				91AE791C23F53FAE008508DA /* Main.storyboard */,
 				91AE791F23F53FAF008508DA /* Assets.xcassets */,
+				910B53902419525000C450CC /* Cartoon_Network_2010_logo.svg */,
 				91AE792123F53FAF008508DA /* LaunchScreen.storyboard */,
 				91AE792423F53FAF008508DA /* Info.plist */,
 				91030E9323F5925D00BE0BAD /* Cartoon.swift */,
 				910A2FBA23FAE89E00D2A72C /* CartoonViewCell.swift */,
 				910A2FBC23FAEBCC00D2A72C /* CartoonsViewController.swift */,
-				910A2FBE23FAED2700D2A72C /* JsonSerializer.swift */,
+				910A2FBE23FAED2700D2A72C /* FirebaseDb.swift */,
 				910A2FC223FB0B1A00D2A72C /* CartoonInfoViewController.swift */,
 				913AF47F23FC4C3A008227AB /* RootViewController.swift */,
 				9166A1C92414F556001E9B40 /* GoogleService-Info.plist */,
@@ -169,6 +176,8 @@
 				913AF48323FC5E5B008227AB /* ApplicationSettingsViewController.swift */,
 				913AF48D23FC70BD008227AB /* Localizable.strings */,
 				910048922413D7A6002CBB00 /* AdaptiveUIImageView.swift */,
+				910B53922419547600C450CC /* Storage.swift */,
+				91B692772419652100F029A1 /* NewCartoonViewController.swift */,
 			);
 			path = movies;
 			sourceTree = "<group>";
@@ -316,6 +325,7 @@
 			files = (
 				91AE792323F53FAF008508DA /* LaunchScreen.storyboard in Resources */,
 				913AF48B23FC70BD008227AB /* Localizable.strings in Resources */,
+				910B53912419525000C450CC /* Cartoon_Network_2010_logo.svg in Resources */,
 				9166A1CA2414F556001E9B40 /* GoogleService-Info.plist in Resources */,
 				91AE792023F53FAF008508DA /* Assets.xcassets in Resources */,
 				91AE791E23F53FAE008508DA /* Main.storyboard in Resources */,
@@ -448,9 +458,10 @@
 			files = (
 				910A2FBB23FAE89E00D2A72C /* CartoonViewCell.swift in Sources */,
 				910A2FBD23FAEBCC00D2A72C /* CartoonsViewController.swift in Sources */,
+				91B692782419652100F029A1 /* NewCartoonViewController.swift in Sources */,
 				910048932413D7A6002CBB00 /* AdaptiveUIImageView.swift in Sources */,
 				913AF48023FC4C3A008227AB /* RootViewController.swift in Sources */,
-				910A2FBF23FAED2700D2A72C /* JsonSerializer.swift in Sources */,
+				910A2FBF23FAED2700D2A72C /* FirebaseDb.swift in Sources */,
 				910A2FC323FB0B1A00D2A72C /* CartoonInfoViewController.swift in Sources */,
 				91AE791B23F53FAE008508DA /* ViewController.swift in Sources */,
 				913AF48223FC4E69008227AB /* FilterMoviesViewController.swift in Sources */,
@@ -458,6 +469,7 @@
 				91030E9423F5925D00BE0BAD /* Cartoon.swift in Sources */,
 				913AF48423FC5E5B008227AB /* ApplicationSettingsViewController.swift in Sources */,
 				91AE791923F53FAE008508DA /* SceneDelegate.swift in Sources */,
+				910B53932419547600C450CC /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

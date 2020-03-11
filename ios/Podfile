@@ -9,6 +9,7 @@ target 'movies' do
   
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
+  pod 'Firebase/Storage'
 
   target 'moviesTests' do
     inherit! :search_paths

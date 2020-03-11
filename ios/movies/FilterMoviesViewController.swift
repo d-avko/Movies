@@ -25,7 +25,6 @@ class FilterMoviesViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
-
     @IBAction func onApplyFilter(_ sender: Any) {
         callBack(minutesText?.text ?? "", hoursText?.text ?? "", authorText?.text ?? "")
     }

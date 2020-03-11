@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 class CartoonsViewController: UITableViewController {
     
-    let serializer = JsonSerializer()
+    let serializer = FirebaseDb.instance
     var cartoons = Array<Cartoon>()
     var filteredCartoons = Array<Cartoon>()
     override func viewDidLoad() {
@@ -20,7 +20,7 @@ class CartoonsViewController: UITableViewController {
         
         super.viewDidLoad()
         
-        updateDataInStore()
+        //updateDataInStore()
         
         serializer.ref.child("movies").observe(.value) { snapshot in
             let castedChilren = snapshot.children.allObjects as? [DataSnapshot]
@@ -35,9 +35,13 @@ class CartoonsViewController: UITableViewController {
                    let link = value?["link"] as? String ?? ""
                    let thumbnail = value?["thumbnailLink"] as? String ?? ""
                    
-                    self.cartoons.append(Cartoon(id: id, name: name, author: author, durationSeconds: duration, rating: rating, genre: genre, link: link, thumbnailLink: thumbnail))
+                    self.cartoons.append(Cartoon(id: id, name: name, author: author, durationSeconds: duration, rating: rating, genre: genre, link: link,
+                                                     thumbnailLink: thumbnail))
                  }
-               }
+            
+            self.filteredCartoons = Array(self.cartoons)
+            self.forceRefreshTableView()
+           }
     }
     
     func updateDataInStore(){
@@ -72,7 +76,7 @@ class CartoonsViewController: UITableViewController {
         
         cartoons.append(Cartoon(id: 15,name: "The Addams Family", author: "Disney", durationSeconds: 7000, rating: 4.2, genre: "Adventure", link: "", thumbnailLink:  ""))
         
-        serializer.saveFile(array: cartoons);
+        serializer.uploadCartoonsToFirebase(array: cartoons);
         self.cartoons = cartoons
         self.forceFilter()
     }
@@ -109,14 +113,16 @@ class CartoonsViewController: UITableViewController {
         
         if let url = URL( string:cartoon.thumbnailLink)
         {
-            DispatchQueue.main.async {
+            DispatchQueue.global().async {
              if let data = try? Data( contentsOf:url)
               {
-                guard cell.photoImageView != nil else {
-                  return
+                DispatchQueue.main.async {
+                    guard cell.photoImageView != nil else {
+                      return
+                    }
+                     
+                     cell.photoImageView?.image = UIImage( data:data)
                 }
-                 
-                 cell.photoImageView?.image = UIImage( data:data)
              }
             }
         }
@@ -168,6 +174,10 @@ class CartoonsViewController: UITableViewController {
             self.filteredCartoons = self.filteredCartoons.filter({ $0.author == authorFilter  })
         }
         
+        self.forceRefreshTableView()
+    }
+    
+    func forceRefreshTableView(){
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }

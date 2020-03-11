@@ -9,13 +9,15 @@
 import Foundation
 import FirebaseDatabase
 
-class JsonSerializer{
+class FirebaseDb{
     let encoder = JSONEncoder()
     let decoder = JSONDecoder()
+    public static let instance = FirebaseDb()
+    
     public let ref = Database.database().reference()
     
-    public func saveFile(array: Array<Cartoon>){
-        for data in array{
+    public func uploadCartoonsToFirebase(array: Array<Cartoon>){
+        for data in array {
             let dataToStore = ["id" : data.id,
                 "name" : data.name,
                 "author" : data.author,
@@ -33,5 +35,24 @@ class JsonSerializer{
                 }
             })
         }
+    }
+    
+    public func uploadCartoonToFirebase(data: Cartoon){
+        let dataToStore = ["id" : data.id,
+                       "name" : data.name,
+                       "author" : data.author,
+                       "durationSeconds" : data.durationSeconds,
+                       "genre": data.genre,
+                       "link": data.link,
+                       "thumbnailLink": data.thumbnailLink,
+                       "rating": data.rating] as [String : Any]
+                   
+       ref.child("movies").child(String(data.id)).setValue(dataToStore, withCompletionBlock: { err, ref in
+           if let error = err {
+               print("userInfoDictionary was not saved: \(error.localizedDescription)")
+           } else {
+               print("userInfoDictionary saved successfully!")
+           }
+       })
     }
 }
