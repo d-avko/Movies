@@ -7,16 +7,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bsuir.cartooons.models.Cartoon
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
 import java.util.Locale;
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
-
-
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 
 class MainActivity : AppCompatActivity(), IFilterable, View.OnClickListener {
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity(), IFilterable, View.OnClickListener {
     }
 
     override fun filter(author: String, minutesDuration: String, hoursDuration: String) {
-        filteredCartoons = DataSource.createDataSet(applicationContext, jsonSerializer)
+        filteredCartoons = ArrayList(cartoons)
 
         if(author != ""){
             filteredCartoons = filteredCartoons?.filter { cartoon -> cartoon.author == author }
@@ -137,6 +138,12 @@ class MainActivity : AppCompatActivity(), IFilterable, View.OnClickListener {
                 }
                 startActivity(intent)
             }
+            R.id.addNewCartoon -> {
+                val intent = Intent(this, add_new_cartoon::class.java).apply {
+
+                }
+                startActivity(intent)
+            }
 
         }
 
@@ -146,11 +153,56 @@ class MainActivity : AppCompatActivity(), IFilterable, View.OnClickListener {
     var cartoons: ArrayList<Cartoon>? = null
     var filteredCartoons: List<Cartoon>? = null
 
-    private fun addDataSet(jsonSerializer: JsonFileSerializer) {
-        cartoons = DataSource.createDataSet(applicationContext, jsonSerializer)
-        filteredCartoons = DataSource.createDataSet(applicationContext, jsonSerializer)
-        cartoonRecyclerAdapter.submitList(this, filteredCartoons!!)
+    private lateinit var database: DatabaseReference
+
+    fun writeNewCartoon(cartoon: Cartoon){
+        database.child("movies").child(cartoon.id.toString()).setValue(cartoon).addOnSuccessListener {
+            cartoons?.add(cartoon)
+            cartoonRecyclerAdapter.submitList(this, cartoons!!)
+            cartoonRecyclerAdapter.notifyDataSetChanged()
+            recycler_view.adapter = cartoonRecyclerAdapter
+        }
     }
+
+
+    private fun addDataSet(jsonSerializer: JsonFileSerializer) {
+        database = Firebase.database.reference
+        database.child("movies").addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                var resultingMovies = ArrayList<Cartoon>()
+                // Get Post object and use the values to update the UI
+                val movies = dataSnapshot.value
+                        as List<HashMap<String, Any>>
+
+                for(movie in movies){
+                    var ratingLong = movie["rating"] as? Long
+                    var ratingDouble = movie["rating"] as? Double
+
+                    if(ratingLong != null){
+                        ratingDouble = ratingLong?.toDouble()
+                    }
+
+                    resultingMovies.add(Cartoon(movie["name"] as String, movie["author"] as String,
+                        movie["durationSeconds"] as Long, ratingDouble!!, movie["genre"] as String,
+                        movie["link"] as String, movie["thumbnailLink"] as String, movie["id"] as Long))
+                }
+
+                filteredCartoons = ArrayList<Cartoon>(resultingMovies)
+                cartoons = ArrayList(resultingMovies)
+                cartoonRecyclerAdapter.submitList(this@MainActivity, filteredCartoons!!)
+                cartoonRecyclerAdapter.notifyDataSetChanged()
+                recycler_view.adapter = cartoonRecyclerAdapter
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                // Getting Post failed, log a message
+
+                // ...
+            }
+        })
+    }
+
+
 
     private fun initRecyclerView(){
 

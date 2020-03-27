@@ -8,4 +8,8 @@
         android:id="@+id/filter"
         android:icon="@android:drawable/ic_menu_edit"
         android:title="@string/cartoons_filter" />
+    <item
+        android:id="@+id/addNewCartoon"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/add_cartoon" />
 </menu>

@@ -18,4 +18,11 @@
     <string name="settings_fontsize_large">Вялікі</string>
     <string name="video_error_caption">Памылка</string>
     <string name="settings_font">Шрыфт</string>
+    <string name="name">Імя</string>
+    <string name="author">Студыя</string>
+    <string name="duration_minutes">Працягласць, хвілін</string>
+    <string name="duration_hours">Працягласць, гадзін</string>
+    <string name="upload_image">Загрузіць карцінку</string>
+    <string name="upload_video">Загрузіць відэа</string>
+    <string name="add_cartoon">Дадаць мультфільм</string>
 </resources>

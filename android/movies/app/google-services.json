@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "772302878290",
+    "firebase_url": "https://movies-ios-2e155.firebaseio.com",
+    "project_id": "movies-ios-2e155",
+    "storage_bucket": "movies-ios-2e155.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772302878290:android:c03c9bd2d14c46da30118b",
+        "android_client_info": {
+          "package_name": "com.bsuir.cartooons"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772302878290-donede170is8730mmbiatf71nod5rvft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDs9bSzFw7ZgCytzXH-_Wggw0YuuJ9dY9o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772302878290-donede170is8730mmbiatf71nod5rvft.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "772302878290-a79iivm6tad4herp2535v1t6j3fhjmot.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "bsuir.movies"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

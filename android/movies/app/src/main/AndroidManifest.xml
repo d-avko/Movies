@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".settings_activity"></activity>
+        <activity android:name=".add_new_cartoon"></activity>
+        <activity android:name=".settings_activity" />
         <activity android:name=".video_activity" />
         <activity android:name=".filter_activity" />
         <activity android:name=".MainActivity">

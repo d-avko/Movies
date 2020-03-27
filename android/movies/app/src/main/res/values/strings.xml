@@ -18,4 +18,11 @@
     <string name="settings_fontsize_medium">Medium</string>
     <string name="settings_fontsize_large">Large</string>
     <string name="settings_font">Font</string>
+    <string name="name">Name</string>
+    <string name="author">Author</string>
+    <string name="duration_minutes">Duration, minutes</string>
+    <string name="duration_hours">Duration, hours</string>
+    <string name="upload_image">Upload an image</string>
+    <string name="upload_video">Upload a video</string>
+    <string name="add_cartoon">Add cartoon</string>
 </resources>
